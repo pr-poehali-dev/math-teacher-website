@@ -286,7 +286,7 @@ const Index = () => {
                   <CardHeader className="flex flex-row items-start justify-between space-y-0">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                           <Icon name={link.icon} className="text-white" size={20} />
                         </div>
                         <CardTitle className="font-heading text-lg">{link.title}</CardTitle>
@@ -309,7 +309,7 @@ const Index = () => {
                   <CardHeader className="flex flex-row items-start justify-between space-y-0">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                           <Icon name={link.icon} className="text-white" size={20} />
                         </div>
                         <CardTitle className="font-heading text-lg">{link.title}</CardTitle>
@@ -332,7 +332,7 @@ const Index = () => {
                   <CardHeader className="flex flex-row items-start justify-between space-y-0">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                           <Icon name={link.icon} className="text-white" size={20} />
                         </div>
                         <CardTitle className="font-heading text-lg">{link.title}</CardTitle>
@@ -532,17 +532,7 @@ const Index = () => {
                       </div>
                       <div>
                         <p className="text-sm font-semibold">Email</p>
-                        <p className="text-sm text-muted-foreground">teacher@example.com</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                        <Icon name="Phone" className="text-accent" size={20} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold">Телефон</p>
-                        <p className="text-sm text-muted-foreground">+7 (XXX) XXX-XX-XX</p>
+                        <p className="text-sm text-muted-foreground">e.gelbing@mail.ru</p>
                       </div>
                     </div>
                     
@@ -551,8 +541,8 @@ const Index = () => {
                         <Icon name="MessageCircle" className="text-secondary" size={20} />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold">Telegram</p>
-                        <p className="text-sm text-muted-foreground">@teacher</p>
+                        <p className="text-sm font-semibold">ВКонтакте</p>
+                        <p className="text-sm text-muted-foreground">@e.gelbing</p>
                       </div>
                     </div>
                   </div>
