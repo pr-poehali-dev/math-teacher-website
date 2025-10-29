@@ -1,11 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Сообщение отправлено!",
+      description: "Спасибо за обращение. Я свяжусь с вами в ближайшее время.",
+    });
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   const resources = [
     {
@@ -103,7 +122,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-heading font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              МатИнфо Портал
+              Сайт Гельбинг Екатерины
             </h1>
             <div className="flex gap-2">
               <Button 
@@ -137,6 +156,14 @@ const Index = () => {
               >
                 <Icon name="User" className="mr-2" size={18} />
                 О себе
+              </Button>
+              <Button 
+                variant={activeSection === "contact" ? "default" : "ghost"}
+                onClick={() => scrollToSection("contact")}
+                className="hover:scale-105 transition-transform"
+              >
+                <Icon name="Mail" className="mr-2" size={18} />
+                Связь
               </Button>
             </div>
           </div>
@@ -188,7 +215,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-heading font-bold mb-4 text-foreground">
-              📚 Методическая копилка
+              Методическая копилка
             </h2>
             <p className="text-lg text-muted-foreground">
               Коллекция учебных материалов и методических разработок
@@ -225,7 +252,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-heading font-bold mb-4 text-foreground">
-              🎯 Подготовка к ОГЭ и ЕГЭ
+              Подготовка к ОГЭ и ЕГЭ
             </h2>
             <p className="text-lg text-muted-foreground">
               Лучшие ресурсы для успешной сдачи экзаменов
@@ -428,11 +455,119 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="contact" className="py-20 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12 animate-fade-in">
+              <h2 className="text-4xl font-heading font-bold mb-4 text-foreground">
+                Обратная связь
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Есть вопросы? Напишите мне, и я обязательно отвечу!
+              </p>
+            </div>
+
+            <Card className="shadow-2xl animate-scale-in border-2">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-base font-semibold">
+                      Имя
+                    </Label>
+                    <Input
+                      id="name"
+                      placeholder="Ваше имя"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className="text-base"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-base font-semibold">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="ваш@email.ru"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className="text-base"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-base font-semibold">
+                      Сообщение
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Напишите ваше сообщение..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                      rows={6}
+                      className="text-base resize-none"
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity text-lg"
+                  >
+                    <Icon name="Send" className="mr-2" size={20} />
+                    Отправить сообщение
+                  </Button>
+                </form>
+
+                <div className="mt-8 pt-8 border-t border-border">
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Icon name="Mail" className="text-primary" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">Email</p>
+                        <p className="text-sm text-muted-foreground">teacher@example.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                        <Icon name="Phone" className="text-accent" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">Телефон</p>
+                        <p className="text-sm text-muted-foreground">+7 (XXX) XXX-XX-XX</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+                        <Icon name="MessageCircle" className="text-secondary" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">Telegram</p>
+                        <p className="text-sm text-muted-foreground">@teacher</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
-              <h3 className="font-heading font-bold text-xl mb-2">МатИнфо Портал</h3>
+              <h3 className="font-heading font-bold text-xl mb-2">Сайт Гельбинг Екатерины</h3>
               <p className="text-white/80">Образовательный сайт учителя математики и информатики</p>
             </div>
             <div className="flex gap-4">
