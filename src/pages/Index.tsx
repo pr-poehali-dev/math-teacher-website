@@ -353,7 +353,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 animate-fade-in">
               <h2 className="text-4xl font-heading font-bold mb-4 text-foreground">
-                👤 О себе
+                О себе
               </h2>
               <p className="text-lg text-muted-foreground">
                 Немного о моем опыте и подходе к обучению
@@ -365,7 +365,7 @@ const Index = () => {
                 <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
                   <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center flex-shrink-0 overflow-hidden shadow-xl">
                     <img 
-                      src="https://cdn.poehali.dev/projects/a99111f2-d2e0-4404-bc42-0fd25da09a9a/files/00993e72-c678-499a-8691-4008e07d04e4.jpg" 
+                      src="https://cdn.poehali.dev/files/7ba4515b-2e52-438d-9470-9294dddefb9b.jpg" 
                       alt="Фото учителя" 
                       className="w-full h-full object-cover"
                     />
@@ -376,14 +376,11 @@ const Index = () => {
                       <h3 className="text-2xl font-heading font-bold mb-2 text-foreground">
                         Учитель математики и информатики
                       </h3>
-                      <p className="text-muted-foreground text-lg">
-                        Высшая квалификационная категория
-                      </p>
                     </div>
 
                     <div className="space-y-4 text-foreground/90">
                       <p className="leading-relaxed">
-                        Более 15 лет помогаю ученикам открывать для себя удивительный мир математики 
+                        Более 3 лет помогаю ученикам открывать для себя удивительный мир математики 
                         и информационных технологий. Верю, что каждый ученик способен достичь успеха 
                         при правильном подходе и мотивации.
                       </p>
@@ -405,7 +402,7 @@ const Index = () => {
                           </div>
                           <div>
                             <h4 className="font-semibold mb-1">Результаты ЕГЭ</h4>
-                            <p className="text-sm text-muted-foreground">Средний балл выше регионального</p>
+                            <p className="text-sm text-muted-foreground">85+ баллов</p>
                           </div>
                         </div>
                         
